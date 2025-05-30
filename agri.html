@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaishnav Krashi Seva Kendra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      scroll-behavior: smooth;
+      color: #333;
+    }
+
+    header {
+      background-color: #25729e;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav button {
+      background-color: #50a548;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    nav button:hover {
+      background-color: #0f110f;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('https://source.unsplash.com/1600x600/?farm,agriculture') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .hero button {
+      background-color: #53a157;
+      border: none;
+      padding: 12px 28px;
+      font-size: 18px;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 40px 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #0f110f;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 30px;
+      text-align: center;
+    }
+
+    .service-box {
+      flex: 1 1 280px;
+      background-color: #f1f8e9;
+      padding: 25px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .service-box i {
+      font-size: 40px;
+      color: #388e3c;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    form button {
+      background-color: #388e3c;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    form button:hover {
+      background-color: #2e7d32;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .feature {
+      flex: 1 1 45%;
+      background-color: #e8f5e9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 15px;
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #66bb6a;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+
+      .feature {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Vaishnav Krashi Seva Kendra</h1>
+    <p>Enhancing Seed Quality for a Better Tomorrow</p>
+  </header>
+
+  <nav>
+    <button onclick="scrollToSection('home')">Home</button>
+    <button onclick="scrollToSection('about')">About</button>
+    <button onclick="scrollToSection('services')">Services</button>
+    <button onclick="scrollToSection('features')">Features</button>
+    <button onclick="scrollToSection('contact')">Contact</button>
+  </nav>
+
+  <div class="hero" id="home">
+    <h2>Welcome to Vaishnav Krashi Seva Kendra</h2>
+    <p>Empowering farmers through better seeds and sustainable practices.</p>
+    <button onclick="scrollToSection('contact')">Get in Touch</button>
+  </div>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Vaishnav Krashi Seva Kendra is a forward-thinking initiative focused on promoting sustainable agriculture by improving seed quality, educating farmers, and supporting eco-friendly farming practices across India and beyond.</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service-box">
+        <i>🌱</i>
+        <h3>High-Quality Seeds</h3>
+        <p>Certified and lab-tested seeds for better crop yield and growth.</p>
+      </div>
+      
+      <div class="service-box">
+        <i>🌾</i>
+        <h3>Soil Testing</h3>
+        <p>Get your soil analyzed for optimal crop planning and fertilization.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <h2>Why Choose Us?</h2>
+    <div class="features">
+      <div class="feature">
+        <h3> Expert Guidance</h3>
+        <p>provides dedicated support and expert advice tailored to your farming needs.</p>
+      </div>
+      <div class="feature">
+        <h3> Products</h3>
+        <p>We offer products that are promote sustainable agriculture.</p>
+      </div>
+      <div class="feature">
+        <h3>Affordable Solutions</h3>
+        <p>Quality services and products offered at competitive prices to support all scale farmers.</p>
+      </div>
+      <div class="feature">
+        <h3>Strong Network</h3>
+        <p>Connected with top seed companies and agricultural experts nationwide.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="tel" placeholder="Your Phone Number" required pattern="[0-9]{10}" />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ccc;">
+      <h3 style="color: #2e7d32;">Our Shop</h3>
+      <p><strong>Address:</strong>  Madhya Pradesh, India</p>
+      <p><strong>Phone:</strong> +91-9876543210</p>
+      <p><strong>Email:</strong> info@vaishnavkrashiseva.com</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Vaishnav Krashi Seva Kendra. All rights reserved.</p>
+  </footer>
+
+  <button onclick="scrollToTop()" id="topBtn" title="Back to top">&uarr;</button>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    const topBtn = document.getElementById("topBtn");
+    window.onscroll = () => {
+      topBtn.style.display = (window.scrollY > 300) ? "block" : "none";
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
